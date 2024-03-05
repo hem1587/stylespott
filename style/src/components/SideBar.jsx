@@ -21,10 +21,10 @@ import {
   
     const intialGender = SearchParam.get("gender");
     const intialCateory = SearchParam.getAll("category");
-    const intialColor = SearchParam.getAll("colors")
+    const intialColor = SearchParam.getAll("color")
     const [gender, setgender] = useState(intialGender|| "")
     const [category, setcategory] = useState(intialCateory || []);
-    const [colors ,setcolors]= useState(intialColor||[])
+    const [color ,setcolors]= useState(intialColor||[])
     const intialSortOrder = SearchParam.get("order")
     const intialSortBy = SearchParam.get("sortby")
     const [order, SetOrder] = useState(intialSortOrder || "")
@@ -46,7 +46,7 @@ import {
   
     const handleColors = (e) => {
       const { value } = e.target;
-      let newColors = [...colors];
+      let newColors = [...color];
       if (newColors.includes(value)) {
         newColors = newColors.filter((el) => el !== value)
       } else {
@@ -62,17 +62,17 @@ import {
   
     useEffect(()=>{
       let params ={
-        colors,
+        color,
         category, 
       }
       gender && (params.gender = gender);
       SetSearchParam(params)
-    },[colors,gender,category]);
+    },[color,gender,category]);
   
   
     if(clear){
       let params={
-        colors:[],
+        color:[],
         category:[],
         gender:""
       }
@@ -112,52 +112,52 @@ import {
         <Heading mt={5} fontSize={16} >COLORS</Heading>
           <VStack display={"flex"} alignItems={"start"} pt={6}>
             <div className="color">
-              <Checkbox value="Red" onChange={handleColors} defaultChecked={colors.includes("Red")}/>
+              <Checkbox value="Red" onChange={handleColors} defaultChecked={color.includes("Red")}/>
               <div className="round red"></div>
               <Text>Red</Text>
             </div>
             <div className="color">
-              <Checkbox value="Blue" onChange={handleColors} defaultChecked={colors.includes("Blue")}/>
+              <Checkbox value="Blue" onChange={handleColors} defaultChecked={color.includes("Blue")}/>
               <div className="round blue"></div>
               <Text>Blue</Text>
             </div>
             <div className="color">
-              <Checkbox value="Green" onChange={handleColors} defaultChecked={colors.includes("Green")} />
+              <Checkbox value="Green" onChange={handleColors} defaultChecked={color.includes("Green")} />
               <div className="round green"></div>
               <Text>Green</Text>
             </div>
             <div className="color">
-              <Checkbox value="Black" onChange={handleColors} defaultChecked={colors.includes("Black")}/>
+              <Checkbox value="Black" onChange={handleColors} defaultChecked={color.includes("Black")}/>
               <div className="round black"></div>
               <Text>Black</Text>
             </div>
             <div className="color">
-              <Checkbox value="White" onChange={handleColors} defaultChecked={colors.includes("White")}/>
+              <Checkbox value="White" onChange={handleColors} defaultChecked={color.includes("White")}/>
               <div className="round whte"></div>
               <Text>White</Text>
             </div>
             <div className="color">
-              <Checkbox value="Yellow" onChange={handleColors} defaultChecked={colors.includes("Yellow")}/>
+              <Checkbox value="Yellow" onChange={handleColors} defaultChecked={color.includes("Yellow")}/>
               <div className="round yellow"></div>
               <Text>Yellow</Text>
             </div>
             <div className="color">
-              <Checkbox value="Pink" onChange={handleColors} defaultChecked={colors.includes("Pink")}/>
+              <Checkbox value="Pink" onChange={handleColors} defaultChecked={color.includes("Pink")}/>
               <div className="round pink"></div>
               <Text>Pink</Text>
             </div>
             <div className="color">
-              <Checkbox value="purple" onChange={handleColors} defaultChecked={colors.includes("purple")} />
+              <Checkbox value="purple" onChange={handleColors} defaultChecked={color.includes("purple")} />
               <div className="round purple"></div>
               <Text>Purple</Text>
             </div>
             <div className="color">
-              <Checkbox value="Orange" onChange={handleColors} defaultChecked={colors.includes("Orange")} />
+              <Checkbox value="Orange" onChange={handleColors} defaultChecked={color.includes("Orange")} />
               <div className="round orange"></div>
               <Text>Orange</Text>
             </div>
             <div className="color">
-              <Checkbox value="Brown" onChange={handleColors} defaultChecked={colors.includes("Brown")} />
+              <Checkbox value="Brown" onChange={handleColors} defaultChecked={color.includes("Brown")} />
               <div className="round brown"></div>
               <Text>Brown</Text>
             </div>

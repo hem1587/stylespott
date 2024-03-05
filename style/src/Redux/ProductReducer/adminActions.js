@@ -3,7 +3,7 @@
 import axios from "axios";
 import { ADD_SUCCESS, DELETE_SUCCSESS, EDIT_SUCCESS, ERROR, GET_SUCCESS, REQUEST } from "./actionTypes";
 
-let URL = "http://localhost:8080";
+let URL = "https://natural-lead-thrush.glitch.me";
 
 export const addProduct = (payload) => (dispatch) =>{
     dispatch({type:REQUEST});
